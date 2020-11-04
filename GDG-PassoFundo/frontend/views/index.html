@@ -1,0 +1,59 @@
+<html ng-app="gdg">
+<head>
+	<title>GDG - AngularJS</title>
+
+	<meta charset="utf-8"/>
+
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+  
+  <!-- Angular Material Library -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+	<script type="text/javascript" src="../scripts/app.js"></script>
+
+</head>
+
+<body ng-controller="gdgController">
+	   
+	<content >
+	  	<h1>Lista de usuários</h1>
+
+	  	<table>
+		      <tbody>
+			  <thead>
+			      <tr>
+				  <td><b>Nome</b></td>
+				  <td><b>Email</b></td>
+			      </tr>
+			  </thead>
+
+			  <tr ng-repeat="usuario in usuarios">
+			      <td>{{usuario.nome}}</td>
+			      <td>{{usuario.email}}</td>
+			  </tr>
+
+		      </tbody>
+		  </table>
+				  
+
+		  <md-input-container>
+			  <label>Nome</label>
+			  <input ng-model="usuario.nome">
+		  </md-input-container>
+		  <md-input-container>
+			  <label>Email</label>
+			  <input ng-model="usuario.email">
+		  </md-input-container>
+			  
+
+		  <md-button class="md-raised md-primary" ng-click="adicionarUsuarioServer(usuario)">Adicionar</md-button>
+					  
+	</content>	
+
+</body>
+</html>
